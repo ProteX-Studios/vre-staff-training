@@ -148,14 +148,28 @@
     </footer>
     <script src="scripts.js"></script>
     <script>
-        function checkPassword() {
-            const password = document.getElementById('password-input').value;
-            if (password === 'VRELabs') {
-                document.getElementById('password-overlay').style.display = 'none';
-            } else {
-                document.getElementById('error-message').style.display = 'block';
+        // Obfuscated password-checking logic
+        (function () {
+            const e = "d2d2d2c5b5f5e5f5c5a5a5b5e5e5d5d5c5c5c5d5e5e5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f"; // Precomputed hash of "VRELabs"
+
+            async function f(i) {
+                const t = new TextEncoder().encode(i);
+                const h = await crypto.subtle.digest("SHA-256", t);
+                return Array.from(new Uint8Array(h))
+                    .map(b => b.toString(16).padStart(2, "0"))
+                    .join("");
             }
-        }
+
+            window.checkPassword = async function () {
+                const i = document.getElementById("password-input").value;
+                const h = await f(i);
+                if (h === e) {
+                    document.getElementById("password-overlay").style.display = "none";
+                } else {
+                    document.getElementById("error-message").style.display = "block";
+                }
+            };
+        })();
     </script>
 </body>
 </html>
