@@ -148,28 +148,37 @@
     </footer>
     <script src="scripts.js"></script>
     <script>
-        // Obfuscated password-checking logic
-        (function () {
-            const e = "d2d2d2c5b5f5e5f5c5a5a5b5e5e5d5d5c5c5c5d5e5e5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f"; // Precomputed hash of "VRELabs"
-
-            async function f(i) {
-                const t = new TextEncoder().encode(i);
-                const h = await crypto.subtle.digest("SHA-256", t);
-                return Array.from(new Uint8Array(h))
-                    .map(b => b.toString(16).padStart(2, "0"))
-                    .join("");
+        async function fetchPasswordHash() {
+            try {
+                const response = await fetch('password-hash.json'); // Fetch the hash from an external file
+                if (!response.ok) throw new Error('Failed to fetch password hash');
+                const data = await response.json();
+                return data.hash;
+            } catch (error) {
+                console.error('Error fetching password hash:', error);
+                return null;
             }
+        }
 
-            window.checkPassword = async function () {
-                const i = document.getElementById("password-input").value;
-                const h = await f(i);
-                if (h === e) {
-                    document.getElementById("password-overlay").style.display = "none";
-                } else {
-                    document.getElementById("error-message").style.display = "block";
-                }
-            };
-        })();
+        async function hashInput(input) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(input);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkPassword() {
+            const password = document.getElementById('password-input').value;
+            const hashedInput = await hashInput(password);
+            const storedHash = await fetchPasswordHash();
+
+            if (storedHash && hashedInput === storedHash) {
+                document.getElementById('password-overlay').style.display = 'none';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>
