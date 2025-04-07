@@ -1,0 +1,295 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #7289da, #2196f3); /* Discord and VRChat colors */
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.8rem; /* Slightly larger for emphasis */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem; /* Slightly larger for better readability */
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #fff;
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+/* Lessons Section */
+.lessons {
+    padding: 2rem;
+    background-color: #f3f4f6; /* Neutral background for focus */
+}
+
+.lessons h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.lesson-card {
+    background-color: #e8f5e9; /* Light green for Minecraft theme */
+    border-left: 5px solid #4caf50; /* Minecraft accent */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lesson-card:nth-child(1) {
+    background-color: #e8f0fe; /* Light blue for Discord */
+    border-left: 5px solid #7289da; /* Discord accent */
+}
+
+.lesson-card:nth-child(2) {
+    background-color: #e3f2fd; /* Light blue for VRChat */
+    border-left: 5px solid #2196f3; /* VRChat accent */
+}
+
+.lesson-card:nth-child(3) {
+    background-color: #fbe9e7; /* Light orange for FiveM */
+    border-left: 5px solid #ff5722; /* FiveM accent */
+}
+
+.lesson-card:nth-child(4) {
+    background-color: #e8f5e9; /* Light green for Minecraft */
+    border-left: 5px solid #4caf50; /* Minecraft accent */
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.lesson-card p {
+    font-size: 1rem;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.lesson-header .lesson-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.lesson-body {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #ff758c;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff758c;
+    padding-bottom: 0.5rem;
+}
+
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.styled-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.styled-list li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: #ff758c;
+    font-size: 1.5rem;
+}
+
+.highlight {
+    color: #ff7eb3;
+    font-weight: bold;
+}
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 5px solid #7289da; /* Discord accent */
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    background-color: #fff;
+    border-top: 5px solid #4caf50; /* Minecraft accent */
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact input, .contact textarea, .contact button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #2196f3;
+}
+
+/* Footer */
+.footer-content {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #fff;
+    border-top: 5px solid #ff5722; /* FiveM accent */
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem; /* Adjust spacing for multiple lines */
+    font-size: 0.9rem; /* Slightly smaller for secondary text */
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #00bcd4;
+}
