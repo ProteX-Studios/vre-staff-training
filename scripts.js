@@ -13,6 +13,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+let currentPassword = null; // Store the current password in memory
+
 async function generateRandomPassword() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let password = '';
@@ -23,10 +25,7 @@ async function generateRandomPassword() {
 }
 
 async function updatePassword() {
-    const newPassword = await generateRandomPassword();
-
-    // Update the password.json file (simulated here, requires backend for real implementation)
-    console.log("New Password:", newPassword); // For debugging purposes
+    currentPassword = await generateRandomPassword(); // Generate and store the new password in memory
 
     // Send the new password to the Discord webhook
     const webhookUrl = 'https://discord.com/api/webhooks/1358961607396561160/2G69FRSw53vaixn8Z8CSDVaKv-V9gMycCiNWUyGchoqGda6eS-WnzwOvs2xKFZgjY5tB';
@@ -34,30 +33,17 @@ async function updatePassword() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            content: `The new password is: **${newPassword}**`
+            content: `The new password is: **${currentPassword}**`
         })
     });
 
-    return newPassword;
+    console.log("New Password Sent to Discord:", currentPassword); // Debugging purposes
 }
 
-async function fetchPassword() {
-    try {
-        const response = await fetch('password.json'); // Fetch the password from an external file
-        if (!response.ok) throw new Error('Failed to fetch password');
-        const data = await response.json();
-        return data.password;
-    } catch (error) {
-        console.error('Error fetching password:', error);
-        return null;
-    }
-}
-
-async function checkPassword() {
+function checkPassword() {
     const password = document.getElementById('password-input').value;
-    const storedPassword = await fetchPassword();
 
-    if (storedPassword && password === storedPassword) {
+    if (password === currentPassword) {
         document.getElementById('password-overlay').style.display = 'none';
     } else {
         document.getElementById('error-message').style.display = 'block';
