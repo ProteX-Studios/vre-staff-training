@@ -36,6 +36,7 @@ async function hashInput(input) {
 async function checkPassword() {
     const password = document.getElementById('password-input').value;
     const hashedInput = await hashInput(password);
+    console.log("Hashed Input:", hashedInput); // Log the hashed input for comparison
     const storedHash = await fetchPasswordHash();
 
     if (storedHash && hashedInput === storedHash) {
