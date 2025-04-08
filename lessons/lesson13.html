@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13: Understanding How CoreProtect Works</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">VRE Hub</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#content">Lesson 13</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="content" class="lesson-content">
+            <div class="lesson-header">
+                <h1>Lesson 13: Understanding How CoreProtect Works</h1>
+                <p class="lesson-subtitle">Learn how to use CoreProtect to track and undo rule violations on the VRE Minecraft SMP.</p>
+            </div>
+            <article class="lesson-body">
+                <h2 class="section-title">What is CoreProtect?</h2>
+                <p>CoreProtect is a powerful block logging and rollback plugin for Minecraft servers. It is essential for server moderation, ensuring griefing, theft, and other rule violations can be tracked and undone. This guide will cover its core features, commands, and best practices to help moderators efficiently use the plugin.</p>
+                <ul class="styled-list">
+                    <li><strong>Block placements & removals</strong></li>
+                    <li><strong>Container interactions:</strong> Chest, furnace, etc.</li>
+                    <li><strong>Item transactions:</strong> Taking/placing items in containers</li>
+                    <li><strong>Explosions & other world interactions</strong></li>
+                </ul>
+
+                <h2 class="section-title">CoreProtect Command Basics</h2>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/co inspect</td>
+                            <td>Toggles inspection mode. Right-click blocks to see who placed or removed them.</td>
+                        </tr>
+                        <tr>
+                            <td>/co rollback [time] r:[radius] u:[user]</td>
+                            <td>Rolls back changes made by a specific user within a given time & radius.</td>
+                        </tr>
+                        <tr>
+                            <td>/co restore [time] r:[radius] u:[user]</td>
+                            <td>Restores blocks that were previously removed.</td>
+                        </tr>
+                        <tr>
+                            <td>/co lookup [parameters]</td>
+                            <td>Searches logs for specific actions, users, or blocks.</td>
+                        </tr>
+                        <tr>
+                            <td>/co purge [time]</td>
+                            <td>Clears logs older than the specified time to free up space.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="section-title">Inspecting Player Actions</h2>
+                <p>Using <strong>/co inspect</strong>, right-clicking a block will display:</p>
+                <ul class="styled-list">
+                    <li>Who placed or broke it</li>
+                    <li>The time the action was performed</li>
+                    <li>Whether an interaction occurred (e.g., a chest was accessed)</li>
+                </ul>
+                <p><strong>Example:</strong> Block broken by Player123 12h ago</p>
+
+                <h2 class="section-title">Rolling Back Griefing & Theft</h2>
+                <p>If a player griefs a build, you can roll back their actions using:</p>
+                <p><code>/co rollback u:Player123 t:1h r:20</code></p>
+                <ul class="styled-list">
+                    <li><strong>u:Player123:</strong> Targets the user</li>
+                    <li><strong>t:1h:</strong> Rolls back actions from the past hour</li>
+                    <li><strong>r:20:</strong> Applies to a 20-block radius</li>
+                </ul>
+                <p><strong>💡 Tip:</strong> Use a small radius to avoid undoing unrelated changes!</p>
+
+                <h2 class="section-title">Restoring Legitimate Changes</h2>
+                <p>If a rollback accidentally removes legitimate changes, you can restore them:</p>
+                <p><code>/co restore u:Player123 t:1h r:20</code></p>
+                <p>This reverses a rollback and brings back removed items.</p>
+
+                <h2 class="section-title">Checking Chest Transactions</h2>
+                <p>To find out who took items from a chest:</p>
+                <p><code>/co lookup u:Player123 a:container t:12h</code></p>
+                <ul class="styled-list">
+                    <li><strong>a:container:</strong> Filters results to container interactions</li>
+                    <li><strong>t:12h:</strong> Searches logs from the past 12 hours</li>
+                </ul>
+
+                <h2 class="section-title">Best Practices for Moderators</h2>
+                <ul class="styled-list">
+                    <li><strong>✅ Always use small timeframes and radii:</strong> Avoid unnecessary changes.</li>
+                    <li><strong>✅ Cross-check multiple logs:</strong> Verify data before taking action.</li>
+                    <li><strong>✅ Use CoreProtect data in reports:</strong> Include logs when banning rule breakers.</li>
+                    <li><strong>✅ Regularly purge old logs:</strong> Keep the database clean (<code>/co purge 30d</code>).</li>
+                </ul>
+
+                <h2 class="section-title">Troubleshooting Issues</h2>
+                <ul class="styled-list">
+                    <li><strong>Q:</strong> I rolled back a player, but some blocks didn't revert.<br>
+                        <strong>A:</strong> Ensure the rollback timeframe is correct. If needed, try a larger time range.</li>
+                    <li><strong>Q:</strong> I restored a rollback, but it's not perfect.<br>
+                        <strong>A:</strong> Some block data (like orientations) may not restore perfectly. Adjust manually if needed.</li>
+                    <li><strong>Q:</strong> CoreProtect isn’t tracking some changes.<br>
+                        <strong>A:</strong> Make sure logging is enabled and players don’t have bypass permissions.</li>
+                </ul>
+
+                <h2 class="section-title">Final Notes</h2>
+                <p>CoreProtect is your best friend when moderating Minecraft servers. Master these commands, and you'll be able to handle griefing, theft, and disputes quickly and efficiently.</p>
+                <p><strong>🔥 Train your fellow staff in CoreProtect usage so moderation stays top-tier across the server!</strong></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023-2026 Virtual Reality Entertainment & VRE Labs. All rights reserved.</p>
+            <p>Made for VRE with love by VRE Labs.</p>
+            <ul class="social-links">
+                <li><a href="https://x.com/VRE_Group" target="_blank">Twitter</a></li>
+                <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
