@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 17: Understanding A.T.O.S (Advanced Ticket Operations System)</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">VRE Hub</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#content">Lesson 17</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="content" class="lesson-content">
+            <div class="lesson-header">
+                <h1>Lesson 17: Understanding A.T.O.S (Advanced Ticket Operations System)</h1>
+                <p class="lesson-subtitle">Learn how to efficiently manage user requests and streamline ticket operations using A.T.O.S.</p>
+            </div>
+            <article class="lesson-body">
+                <h2 class="section-title">📌 What is A.T.O.S?</h2>
+                <p>A.T.O.S (Advanced Ticket Operations System) is a powerful tool designed to streamline and enhance ticket management within Virtual Reality Entertainment. It allows staff to efficiently manage user requests, track assignments, and ensure smooth operations.</p>
+                <ul class="styled-list">
+                    <li><strong>✅ Create and manage tags:</strong> For quick responses.</li>
+                    <li><strong>✅ Organize ticket assignments:</strong> Ensure prompt resolution.</li>
+                    <li><strong>✅ Reopen closed tickets:</strong> Provide further assistance when needed.</li>
+                </ul>
+
+                <h2 class="section-title">⚙️ Commands & Functions</h2>
+                <h3 class="highlight">📌 Tag System (For Quick Responses & FAQs)</h3>
+                <p>The tag system allows staff to store, update, and use predefined responses to common questions or situations.</p>
+                <ul class="styled-list">
+                    <li><strong>🔹 !add_tag &lt;tag_name&gt; &lt;content&gt;:</strong> Create a new tag for quick use.</li>
+                    <li><strong>🔹 !update_tag &lt;tag_name&gt; &lt;content&gt;:</strong> Modify an existing tag.</li>
+                    <li><strong>🔹 !delete_tag &lt;tag_name&gt;:</strong> Remove an outdated tag.</li>
+                    <li><strong>🔹 !tag &lt;tag_name&gt;:</strong> Retrieve and display a saved tag in the ticket.</li>
+                </ul>
+                <p><strong>📝 Example Usage:</strong></p>
+                <p><em>💬 User asks:</em> "How do I verify as an artist?"</p>
+                <p><em>👩‍💻 Staff replies:</em> !tag artist_verification (Automatically sends pre-saved verification instructions.)</p>
+
+                <h3 class="highlight">🎟 Ticket System (Managing and Organizing Tickets)</h3>
+                <p>A.T.O.S provides an intuitive ticket system that allows staff to handle user inquiries efficiently.</p>
+                <ul class="styled-list">
+                    <li><strong>🔹 !setup_panel:</strong> Deploys a ticket panel in a designated channel for users to open new tickets.</li>
+                    <li><strong>🔹 !assign_ticket &lt;ticket_id&gt; &lt;@member&gt;:</strong> Assigns a specific ticket to a staff member for accountability.</li>
+                    <li><strong>🔹 !reopen_ticket &lt;ticket_id&gt;:</strong> Reopens a ticket that was recently closed, in case further assistance is required.</li>
+                </ul>
+                <p><strong>📝 Example Usage:</strong></p>
+                <ol class="styled-list">
+                    <li>A user submits a ticket requesting event host verification.</li>
+                    <li>A staff member responds and assigns the ticket: <code>!assign_ticket 1024 @EventModAlex</code> (Now Alex is responsible for handling this ticket.)</li>
+                    <li>If the user needs follow-up after closure: <code>!reopen_ticket 1024</code> (The ticket is reopened for additional discussion.)</li>
+                </ol>
+
+                <h2 class="section-title">🚨 Best Practices for A.T.O.S Usage</h2>
+                <ul class="styled-list">
+                    <li><strong>🔹 Use Tags Wisely:</strong> Keep frequently used responses up-to-date and relevant.</li>
+                    <li><strong>🔹 Assign Tickets Responsibly:</strong> Ensure assigned tickets are handled promptly.</li>
+                    <li><strong>🔹 Keep Logs Updated:</strong> Regularly check and clean up outdated tickets to maintain organization.</li>
+                    <li><strong>🔹 Respect User Needs:</strong> If a ticket is reopened, ensure the user’s concerns are fully addressed.</li>
+                </ul>
+
+                <h2 class="section-title">📌 Final Thoughts</h2>
+                <p>A.T.O.S makes ticket management efficient, organized, and user-friendly. By mastering this system, staff can provide faster support, better response tracking, and a seamless experience for the community.</p>
+
+                <h2 class="section-title">🛠 🎯 Training Task</h2>
+                <ol class="styled-list">
+                    <li>Create a tag named <strong>welcome_message</strong> with the content: <em>"Welcome to Virtual Reality Entertainment! A staff member will assist you shortly."</em></li>
+                    <li>Assign a test ticket to another staff member.</li>
+                    <li>Reopen a closed ticket to simulate follow-up support.</li>
+                </ol>
+                <p><strong>💡 Mastering these commands will make you a pro at handling tickets like a champ! 🚀</strong></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023-2026 Virtual Reality Entertainment & VRE Labs. All rights reserved.</p>
+            <p>Made for VRE with love by VRE Labs.</p>
+            <ul class="social-links">
+                <li><a href="https://x.com/VRE_Group" target="_blank">Twitter</a></li>
+                <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
