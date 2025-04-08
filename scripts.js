@@ -13,33 +13,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-async function fetchPasswordHash() {
+async function fetchPassword() {
     try {
-        const response = await fetch('password-hash.json'); // Fetch the hash from an external file
-        if (!response.ok) throw new Error('Failed to fetch password hash');
+        const response = await fetch('password.json'); // Fetch the password from an external file
+        if (!response.ok) throw new Error('Failed to fetch password');
         const data = await response.json();
-        return data.hash;
+        return data.password;
     } catch (error) {
-        console.error('Error fetching password hash:', error);
+        console.error('Error fetching password:', error);
         return null;
     }
 }
 
-async function hashInput(input) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(input);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-}
-
 async function checkPassword() {
     const password = document.getElementById('password-input').value;
-    const hashedInput = await hashInput(password);
-    console.log("Hashed Input:", hashedInput); // Log the hashed input for comparison
-    const storedHash = await fetchPasswordHash();
+    const storedPassword = await fetchPassword();
 
-    if (storedHash && hashedInput === storedHash) {
+    if (storedPassword && password === storedPassword) {
         document.getElementById('password-overlay').style.display = 'none';
     } else {
         document.getElementById('error-message').style.display = 'block';
