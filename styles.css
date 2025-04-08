@@ -141,6 +141,63 @@ body {
     font-size: 1rem;
 }
 
+/* General lesson card styling */
+.lesson-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Platform-specific color coding */
+.lesson-card.discord {
+    background-color: #7289da; /* Discord blue */
+    color: #fff;
+}
+
+.lesson-card.vrchat {
+    background-color: #ffcc00; /* VRChat yellow */
+    color: #333;
+}
+
+.lesson-card.minecraft {
+    background-color: #34c759; /* Minecraft green */
+    color: #fff;
+}
+
+/* Importance-based color coding */
+.lesson-card.high-importance {
+    border: 2px solid #ff3b30; /* High importance: red border */
+}
+
+.lesson-card.medium-importance {
+    border: 2px solid #ff9500; /* Medium importance: orange border */
+}
+
+.lesson-card.low-importance {
+    border: 2px solid #4cd964; /* Low importance: green border */
+}
+
+/* Text alignment for lesson cards */
+.lesson-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.2em;
+}
+
+.lesson-card p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
 .lesson-header {
     text-align: center;
     padding: 2rem;
