@@ -21,6 +21,7 @@
       <div class="lesson-header">
         <h1>Lesson 25: Understanding the Floater Sub-Role</h1>
         <p class="lesson-subtitle">Learn how the Floater role supports events by being adaptable, proactive, and engaging.</p>
+        <button id="tts-button" class="tts-button">🔊 Read Aloud</button>
       </div>
       <article class="lesson-body">
         <h2 class="section-title">1. 🎯 What is a Floater?</h2>
@@ -96,5 +97,14 @@
       </ul>
     </div>
   </footer>
+  <script>
+    const ttsButton = document.getElementById('tts-button');
+    ttsButton.addEventListener('click', () => {
+      const content = document.querySelector('.lesson-content').innerText;
+      const speech = new SpeechSynthesisUtterance(content);
+      speech.lang = 'en-US';
+      window.speechSynthesis.speak(speech);
+    });
+  </script>
 </body>
 </html>
