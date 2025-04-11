@@ -75,4 +75,13 @@
     </div>
   </footer>
 </body>
+<script>
+  const ttsButton = document.getElementById('tts-button');
+  ttsButton.addEventListener('click', () => {
+    const content = document.querySelector('.lesson-content').innerText;
+    const speech = new SpeechSynthesisUtterance(content);
+    speech.lang = 'en-US';
+    window.speechSynthesis.speak(speech);
+  });
+</script>
 </html>
