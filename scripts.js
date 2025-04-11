@@ -35,3 +35,15 @@ async function checkPassword() {
         document.getElementById('error-message').style.display = 'block';
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ttsButton = document.getElementById('tts-button');
+    if (ttsButton) {
+      ttsButton.addEventListener('click', () => {
+        const content = document.querySelector('.lesson-content').innerText;
+        const speech = new SpeechSynthesisUtterance(content);
+        speech.lang = 'en-US';
+        window.speechSynthesis.speak(speech);
+      });
+    }
+  });
