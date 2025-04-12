@@ -478,7 +478,7 @@ footer {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: bold;
-    animation: marquee-fade 10s linear infinite;
+    animation: marquee-fade 15s ease-in-out infinite; /* Slower animation with smooth easing */
     letter-spacing: 2px; /* Add spacing for better readability */
 }
 
@@ -487,11 +487,11 @@ footer {
         transform: translateX(0); /* Start in the center */
         opacity: 1; /* Fully visible */
     }
-    45% {
+    40% {
         transform: translateX(100%); /* Move off-screen to the right */
         opacity: 0; /* Start fading out */
     }
-    55% {
+    60% {
         transform: translateX(-100%); /* Reappear from the left */
         opacity: 0; /* Still invisible */
     }
