@@ -507,20 +507,27 @@ footer {
     }
 }
 
-/* Progress bar styles */
+/* Updated progress bar styles */
 .progress-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it stays on top of other elements */
     text-align: center;
-    margin: 2rem auto;
-    max-width: 800px;
+    width: 250px; /* Fixed width for consistent appearance */
 }
 
 .progress-bar-container {
     background: #ccc;
     border-radius: 10px;
     overflow: hidden;
-    height: 20px;
+    height: 10px; /* Smaller height for compact design */
     width: 100%;
-    margin: 1rem 0;
+    margin: 5px 0;
 }
 
 .progress-bar {
@@ -531,6 +538,7 @@ footer {
 }
 
 #progress-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #FFFFFF;
+    margin-top: 5px;
 }
