@@ -437,3 +437,11 @@ footer {
 #password-overlay button:hover {
     background: #00FFFF;
 }
+
+.highlighted-title {
+    color: #FFFFFF; /* Ensure text is white for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better contrast */
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
