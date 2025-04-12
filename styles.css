@@ -464,7 +464,7 @@ footer {
     }
 }
 
-/* Marquee announcement styles */
+/* Updated marquee announcement styles */
 .marquee {
     background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* Neon gradient background */
     color: #FFFFFF;
@@ -483,9 +483,15 @@ footer {
 
 @keyframes marquee-scroll {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0); /* Start in the center */
+    }
+    50% {
+        transform: translateX(100%); /* Move off-screen to the right */
+    }
+    51% {
+        transform: translateX(-100%); /* Reappear from the left */
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(0); /* Return to the center */
     }
 }
