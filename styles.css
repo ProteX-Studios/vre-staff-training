@@ -446,17 +446,20 @@ footer {
     background: linear-gradient(90deg, #00FFFF, #8A2BE2, #00FFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-animation 3s infinite linear;
+    animation: gradient-wigwag 6s infinite ease-in-out;
     font-size: 1.8rem;
     font-weight: bold;
     background-size: 200%; /* Extend background for smooth animation */
 }
 
-@keyframes gradient-animation {
+@keyframes gradient-wigwag {
     0% {
-        background-position: 100% 50%;
+        background-position: 100% 50%; /* Start at the right */
+    }
+    50% {
+        background-position: 0% 50%; /* Move to the left */
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%; /* Move back to the right */
     }
 }
