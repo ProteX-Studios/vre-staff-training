@@ -56,4 +56,32 @@ document.addEventListener('DOMContentLoaded', () => {
             window.speechSynthesis.speak(speech);
         });
     }
+
+    // Progress bar logic
+    const totalLessons = 25;
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const completedLessons = JSON.parse(localStorage.getItem('completedLessons')) || [];
+
+    // Update progress bar
+    function updateProgress() {
+        const progress = (completedLessons.length / totalLessons) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `${completedLessons.length} of ${totalLessons} lessons completed`;
+    }
+
+    // Mark lesson as completed
+    document.querySelectorAll('.lesson-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const lessonId = card.getAttribute('href');
+            if (!completedLessons.includes(lessonId)) {
+                completedLessons.push(lessonId);
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                updateProgress();
+            }
+        });
+    });
+
+    // Initialize progress
+    updateProgress();
 });

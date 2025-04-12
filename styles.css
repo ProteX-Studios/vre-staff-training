@@ -506,3 +506,31 @@ footer {
         opacity: 1; /* Fully visible */
     }
 }
+
+/* Progress bar styles */
+.progress-section {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.progress-bar-container {
+    background: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF);
+    height: 100%;
+    width: 0%; /* Initial progress */
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+    font-size: 1rem;
+    color: #FFFFFF;
+}
