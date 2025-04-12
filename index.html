@@ -5,116 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VRE Staff Training Hub</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon Purple to Neon Blue gradient */
-            color: #FFFFFF; /* White text for contrast */
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
-        }
-
-        .navbar .logo {
-            color: #FFFFFF; /* White logo text */
-        }
-
-        .nav-links a {
-            color: #FFFFFF; /* White links */
-        }
-
-        .hero {
-            background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .cta-button {
-            background: #8A2BE2; /* Neon Purple */
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #00FFFF; /* Neon Blue on hover */
-        }
-
-        .lesson-card {
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for cards */
-            color: #FFFFFF;
-            padding: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .lesson-card:hover {
-            transform: scale(1.05);
-            background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.9); /* Dark footer */
-            color: #FFFFFF;
-        }
-
-        .social-links a {
-            color: #00FFFF; /* Neon Blue links */
-        }
-
-        .social-links a:hover {
-            color: #8A2BE2; /* Neon Purple on hover */
-        }
-
-        /* Password overlay styles */
-        #password-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        #password-overlay input {
-            padding: 10px;
-            font-size: 16px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        #password-overlay button {
-            background: #8A2BE2;
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        #password-overlay button:hover {
-            background: #00FFFF;
-        }
-    </style>
 </head>
 <body>
     <div id="password-overlay">
         <h1>Enter Password</h1>
         <input type="password" id="password-input" placeholder="Enter password">
         <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red; display: none;">Incorrect password. Please try again.</p>
+        <p id="error-message" class="error-message">Incorrect password. Please try again.</p>
     </div>
     <header>
         <nav class="navbar">
