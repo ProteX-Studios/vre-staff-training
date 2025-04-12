@@ -230,11 +230,11 @@ body {
 
 .lesson-body {
     padding: 2rem;
-    background: #fff;
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match gradient with other sections */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     line-height: 1.8;
-    color: #333; /* Dark text for better contrast on white background */
+    color: #FFFFFF; /* Ensure text is visible on gradient */
 }
 
 .section-title {
