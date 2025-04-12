@@ -131,48 +131,40 @@ body {
     gap: 1.5rem;
 }
 
+/* Fix for lesson-card text visibility */
 .lesson-card {
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for cards */
-    color: #FFFFFF;
+    color: #FFFFFF; /* Ensure text is white for visibility */
     padding: 1.5rem;
     border-radius: 10px;
     text-decoration: none;
     transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 2px solid transparent;
+    display: flex; /* Ensure proper layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content */
 }
 
+/* Remove duplicate or conflicting styles */
+.lesson-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #FFFFFF; /* Ensure header text is visible */
+}
+
+.lesson-card p {
+    font-size: 1rem;
+    color: #FFFFFF; /* Ensure paragraph text is visible */
+    margin: 0; /* Remove unnecessary margins */
+}
+
+/* Fix hover effect for lesson cards */
 .lesson-card:hover {
     transform: scale(1.05);
     background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     border-color: #00FFFF; /* Neon Blue border on hover */
-}
-
-.lesson-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.lesson-card p {
-    font-size: 1rem;
-}
-
-/* General lesson card styling */
-.lesson-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px;
-    text-decoration: none;
-    color: #333;
-    display: block;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.lesson-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Platform-specific color coding */
