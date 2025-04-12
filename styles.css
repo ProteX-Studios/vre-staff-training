@@ -487,9 +487,13 @@ footer {
         transform: translateX(0); /* Start in the center */
         opacity: 1; /* Fully visible */
     }
-    40% {
+    45% {
         transform: translateX(100%); /* Move off-screen to the right */
         opacity: 0; /* Start fading out */
+    }
+    55% {
+        transform: translateX(100%); /* Fully off-screen on the right */
+        opacity: 0; /* Still invisible */
     }
     60% {
         transform: translateX(-100%); /* Reappear from the left */
