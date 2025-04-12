@@ -451,19 +451,17 @@ footer {
 
 /* Animated gradient for the logo */
 .animated-gradient {
-    background: linear-gradient(90deg, #00FFFF, #8A2BE2);
+    background: linear-gradient(90deg, #00FFFF, #8A2BE2, #00FFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-animation 3s infinite;
+    animation: gradient-animation 3s infinite linear;
     font-size: 1.8rem;
     font-weight: bold;
+    background-size: 200%; /* Extend background for smooth animation */
 }
 
 @keyframes gradient-animation {
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
         background-position: 100% 50%;
     }
     100% {
