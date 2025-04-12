@@ -39,11 +39,21 @@ async function checkPassword() {
 document.addEventListener('DOMContentLoaded', () => {
     const ttsButton = document.getElementById('tts-button');
     if (ttsButton) {
-      ttsButton.addEventListener('click', () => {
-        const content = document.querySelector('.lesson-content').innerText;
-        const speech = new SpeechSynthesisUtterance(content);
-        speech.lang = 'en-US';
-        window.speechSynthesis.speak(speech);
-      });
+        ttsButton.addEventListener('click', () => {
+            const content = document.querySelector('.lesson-content').innerText;
+            const speech = new SpeechSynthesisUtterance(content);
+
+            // Attempt to select a more natural-sounding voice
+            const voices = window.speechSynthesis.getVoices();
+            const preferredVoice = voices.find(voice => voice.name.includes('Google') || voice.name.includes('Microsoft') || voice.name.includes('Natural'));
+            if (preferredVoice) {
+                speech.voice = preferredVoice;
+            }
+
+            speech.lang = 'en-US';
+            speech.pitch = 1; // Adjust pitch for a more natural tone
+            speech.rate = 1; // Adjust rate for better clarity
+            window.speechSynthesis.speak(speech);
+        });
     }
-  });
+});
