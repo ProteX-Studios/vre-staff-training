@@ -137,13 +137,16 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     text-decoration: none;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
 }
 
 .lesson-card:hover {
     transform: scale(1.05);
     background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-color: #00FFFF; /* Neon Blue border on hover */
 }
 
 .lesson-card h3 {
@@ -444,4 +447,26 @@ footer {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+/* Animated gradient for the logo */
+.animated-gradient {
+    background: linear-gradient(90deg, #00FFFF, #8A2BE2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s infinite;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
