@@ -463,3 +463,29 @@ footer {
         background-position: 100% 50%; /* Move back to the right */
     }
 }
+
+/* Marquee announcement styles */
+.marquee {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* Neon gradient background */
+    color: #FFFFFF;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee p {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: marquee-scroll 10s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
