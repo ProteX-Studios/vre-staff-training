@@ -478,20 +478,25 @@ footer {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: bold;
-    animation: marquee-scroll 10s linear infinite;
+    animation: marquee-fade 10s linear infinite;
+    letter-spacing: 2px; /* Add spacing for better readability */
 }
 
-@keyframes marquee-scroll {
+@keyframes marquee-fade {
     0% {
         transform: translateX(0); /* Start in the center */
+        opacity: 1; /* Fully visible */
     }
-    50% {
+    45% {
         transform: translateX(100%); /* Move off-screen to the right */
+        opacity: 0; /* Start fading out */
     }
-    51% {
+    55% {
         transform: translateX(-100%); /* Reappear from the left */
+        opacity: 0; /* Still invisible */
     }
     100% {
         transform: translateX(0); /* Return to the center */
+        opacity: 1; /* Fully visible */
     }
 }
