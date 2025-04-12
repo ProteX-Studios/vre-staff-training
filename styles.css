@@ -111,14 +111,18 @@ body {
 
 /* Lessons Section */
 .lessons {
-    padding: 2rem;
-    background-color: #f3f4f6; /* Neutral background for focus */
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for lessons section */
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    color: #FFFFFF;
 }
 
 .lessons h2 {
     text-align: center;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
-    font-size: 2rem;
 }
 
 .lesson-grid {
@@ -128,39 +132,18 @@ body {
 }
 
 .lesson-card {
-    background-color: #e8f5e9; /* Light green for Minecraft theme */
-    border-left: 5px solid #4caf50; /* Minecraft accent */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for cards */
+    color: #FFFFFF;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.lesson-card:nth-child(1) {
-    background-color: #e8f0fe; /* Light blue for Discord */
-    border-left: 5px solid #7289da; /* Discord accent */
-}
-
-.lesson-card:nth-child(2) {
-    background-color: #e3f2fd; /* Light blue for VRChat */
-    border-left: 5px solid #2196f3; /* VRChat accent */
-}
-
-.lesson-card:nth-child(3) {
-    background-color: #fbe9e7; /* Light orange for FiveM */
-    border-left: 5px solid #ff5722; /* FiveM accent */
-}
-
-.lesson-card:nth-child(4) {
-    background-color: #e8f5e9; /* Light green for Minecraft */
-    border-left: 5px solid #4caf50; /* Minecraft accent */
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
 }
 
 .lesson-card h3 {
